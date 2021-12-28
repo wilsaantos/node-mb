@@ -2,6 +2,7 @@ import express from 'express';
 import Car from '../models/Car';
 
 const router = express.Router();
+const carController = router;
 
 // Get All Cars
 router.get('/findall', async (req, res) => {
@@ -70,4 +71,4 @@ router.delete('/delete/:id', async (req, res) => {
     }
 })
 
-module.exports = (app: any) => app.use('/cars', router);
+export default carController;

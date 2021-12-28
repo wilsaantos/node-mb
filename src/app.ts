@@ -1,4 +1,5 @@
 import express from "express";
+import carController from "./controllers/carController";
 
 const app = express();
 
@@ -15,7 +16,7 @@ app.get('/', (req, res) => {
     res.json({ message: 'Oi Express' })
 })
 
-require('./controllers/carController')(app)
+app.use('/cars', carController)
 
 
 
